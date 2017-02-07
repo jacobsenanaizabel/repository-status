@@ -1,0 +1,19 @@
+{
+  "name": "repository-status",
+  "version": "1.0.0",
+  "description": "sistema de monitoramento de status de repositorio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jacobsenanaizabel/repository-status.git"
+  },
+  "author": "Ana Izabel Jacobsen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jacobsenanaizabel/repository-status/issues"
+  },
+  "homepage": "https://github.com/jacobsenanaizabel/repository-status#readme"
+}
