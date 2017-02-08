@@ -1,0 +1,26 @@
+{
+  "name": "repository-status",
+  "homepage": "https://github.com/jacobsenanaizabel/repository-status",
+  "authors": [
+    "Ana Izabel Jacobsen <jacobsenanaizabel@gmail.com>"
+  ],
+  "description": "saiba sobre o status do seu repositorio de maneira facil!",
+  "main": "",
+  "keywords": [
+    "github"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "^3.3.7",
+    "bootstrap": "^3.3.7",
+    "angular": "1.5.6",
+    "underscore": "^1.8.3"
+  }
+}

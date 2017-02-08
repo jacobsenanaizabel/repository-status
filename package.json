@@ -1,0 +1,34 @@
+{
+  "name": "repository-status",
+  "version": "1.0.0",
+  "description": "Uma maneira simples de saber sobre o status do seu repositorio",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "grunt": "^1.0.1"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-cssmin": "^1.0.2",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-sass": "^2.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jacobsenanaizabel/repository-status.git"
+  },
+  "keywords": [
+    "github"
+  ],
+  "author": "Ana Izabel Jacobsen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jacobsenanaizabel/repository-status/issues"
+  },
+  "homepage": "https://github.com/jacobsenanaizabel/repository-status#readme"
+}
