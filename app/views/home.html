@@ -1,51 +1,6 @@
-﻿<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">	
-<meta name="author" content="Ana Izabel Jacobsen">		
-
-<title>Repository Status</title>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="http://code.highcharts.com/highcharts.js"></script>
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/narrow-jumbotron.css" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet">
-
-<script>
-    $(function () { 
-    var myChart = Highcharts.chart('container', {
-        chart: {
-            type: 'bar'
-        },
-        title: {
-            text: 'Fruit Consumption'
-        },
-        xAxis: {
-            categories: ['Apples', 'Bananas', 'Oranges']
-        },
-        yAxis: {
-            title: {
-                text: 'Fruit eaten'
-            }
-        },
-        series: [{
-            name: 'Jane',
-            data: [1, 0, 4]
-        }, {
-            name: 'John',
-            data: [5, 7, 3]
-        }]
-    });
-});
-
-</script>
-</head>
-<body>
- <div class="container">
-    <div class="jumbotron" id="teste" style="background: white;">
-      <img src="img/icon.png">
+﻿<div class="container" ng-controller="MainController">
+    <div class="jumbotron"  style="background: white;">
+      <!--<img src="../../img/icon.png">-->
       <h1 class="display-3">MundiPagg</h1>
       <p class="lead">GitHub MundiPagg </p>
       <hr>
@@ -61,7 +16,9 @@
       </ul>
     </div>
     <!-- Grafico -->
-    <div id="container" style="width:100%; height:400px;"></div>
+      <div style="margin-top: 20px;">
+        <div zingchart id="chart-1" zc-json="myJson" zc-width="100%"  zc-width=600></div>
+      </div>
     <!-- Fim do grafico -->
     <div class="row">
         <div class="col-lg-12">
@@ -83,9 +40,3 @@
           </div>     
         </div>
   </div>
- <script src="js/ie10-viewport-bug-workaround.js"></script>
-</body>
-<footer class="footer">
-    <p>Feito com ❤  por Ana Izabel Jacobsen </p>
-</footer>
-</html>

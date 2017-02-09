@@ -1,2 +1,29 @@
- <!-- bower:js -->
- <!-- endbower -->
+<!doctype html>
+<html lang="pt-br" ng-app="app">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Repository Status</title>
+
+        <!--BIBLIOTECAS -->
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>      
+        <script src="bower_components/angular/angular.min.js"></script>          
+        <script src = "https://cdn.zingchart.com/zingchart.min.js" ></script>  
+        <script src = "https://cdn.zingchart.com/angular/zingchart-angularjs.js" ></script>
+        <!--APP -->	
+        <script src="app/directive/componentes.directive.js"></script>
+        <script src="app/controller/app.controller.js"></script>
+        <!--STYLE -->	
+        <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"> 	
+        <link href="content/css/narrow-jumbotron.css" rel="stylesheet">
+        <link href="content/css/style.css" rel="stylesheet">
+    
+    </head>
+    <body>
+        <div ng-include="'app/views/home.html'"></div>
+        <script src="content/hack/ie10-viewport-bug-workaround.js"></script>
+    </body>
+    <footer class="footer">
+        <p>Feito com ❤  por Ana Izabel Jacobsen </p>
+    </footer>
+</html>
