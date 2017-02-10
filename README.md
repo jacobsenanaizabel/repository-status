@@ -1,5 +1,5 @@
 # REPOSITORY STATUS
-Sistema de status de repositorio github.
+Sistema de status de qualquer repositorio github.
 
 Author:      Ana Izabel Alfaro Jacobsen
 Revision:    1.0.0  
