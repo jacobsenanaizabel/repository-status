@@ -2,7 +2,6 @@
 Sistema de status de qualquer repositorio github.
 
 Author:      Ana Izabel Alfaro Jacobsen
-Revision:    1.0.0  
 Date:        2017-02-10 
   
 
