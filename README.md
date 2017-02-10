@@ -1,5 +1,4 @@
 # REPOSITORY STATUS
-## A github status
 Sistema de status de repositorio github.
 
 Author:      Ana Izabel Alfaro Jacobsen
