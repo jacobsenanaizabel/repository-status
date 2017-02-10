@@ -1,7 +1,6 @@
 module.exports = function(grunt) {
 	'use strict';
  
-	// configuração do projeto
 	var gruntConfig = {
 		pkg: grunt.file.readJSON('package.json'),
 		jshint: {
