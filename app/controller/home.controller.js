@@ -1,8 +1,8 @@
 app.controller('HomeController', function($scope,$http, HomeService) {
 
-  var vm = this;
-  vm.title = "Repository Status";
-  vm.footer = "Feito com ❤  por Ana Izabel Jacobsen"
+  var self = this;
+  self.title = "Repository Status";
+  self.footer = "Feito com ❤  por Ana Izabel Jacobsen"
 
   $scope.init = function(){
 
