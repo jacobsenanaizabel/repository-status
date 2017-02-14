@@ -1,33 +1,36 @@
 <!doctype html>
-<html lang="pt-br" ng-app="app">
+<html lang="pt-br" ng-app="app" ng-controller="HomeController as home">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Repository Status</title>
-   
-        <!--BIBLIOTECAS -->
-        <script src="bower_components/jquery/dist/jquery.min.js"></script>      
-        <script src="bower_components/angular/angular.min.js"></script>    
-        <script href="bower_components/bootstrap/dist/js/bootstrap.min.js"></script> 	      
-        <script src = "https://cdn.zingchart.com/zingchart.min.js" ></script>  
-        <script src = "https://cdn.zingchart.com/angular/zingchart-angularjs.js" ></script>
-        <!--APP -->	
-        <script src="app/controller/app.controller.js"></script>
-        <script src="app/controller/home.controller.js"></script>
-        <script src="app/services/home.service.js"></script>
-        <script src="app/directive/componentes.directive.js"></script>   
+        <title>{{title}}</title>
+
         <!--STYLE -->	
         <link href="content/css/style.css" rel="stylesheet">
         <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"> 	
         <link href="content/css/narrow-jumbotron.css" rel="stylesheet">
-        
-    
+
+        <!--BIBLIOTECAS -->
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>   
+        <script href="bower_components/bootstrap/dist/js/bootstrap.min.js"></script> 	   
+        <script src="bower_components/angular/angular.min.js"></script>      
+      
+        <script src="https://code.angularjs.org/1.5.6/angular-animate.min.js"></script>
+        <script src="https://code.angularjs.org/1.5.6/angular-sanitize.js"></script> 
+        <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script> 
+        <script src = "https://cdn.zingchart.com/zingchart.min.js" ></script>  
+        <script src = "https://cdn.zingchart.com/angular/zingchart-angularjs.js" ></script>
+        <!--APP -->	
+        <script src="app/controller/app.controller.js"></script>
+        <script src="app/services/home.service.js"></script>
+        <script src="app/controller/home.controller.js"></script>
+        <script src="app/directive/componentes.directive.js"></script> 
     </head>
-    <body ng-controller="HomeController as home">
-        <div ng-include="'app/views/home.html'"></div>
+    <body>
+        <div ng-include="'app/views/home.html'"  onload="init()"></div>
         <script src="content/hack/ie10-viewport-bug-workaround.js"></script>
     </body>
     <footer class="footer">
-        <p>Feito com ❤  por Ana Izabel Jacobsen </p>
+        <p>{{footer}}</p>
     </footer>
 </html>

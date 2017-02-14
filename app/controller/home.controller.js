@@ -1,7 +1,31 @@
-var app = angular.module('app', ['zingchart-angularjs']);
- 
-angular.module('app', ['zingchart-angularjs']).controller('HomeController', function($scope) {
+app.controller('HomeController', function($scope,$http, HomeService) {
 
+  var vm = this;
+  vm.title = "Repository Status";
+  vm.footer = "Feito com ❤  por Ana Izabel Jacobsen"
+
+  $scope.init = function(){
+
+    HomeService.getForks().then(function(response) {
+      $scope.forks = response.data;
+    });
+
+    HomeService.getCommits().then(function(response) {
+      $scope.commits = response.data;
+    });
+
+    HomeService.getContributors().then(function(response) {
+      $scope.contributorsCount = response.data;
+    });
+
+    HomeService.getStars().then(function(response) {
+      $scope.starsCount = response.data;
+    });
+
+  }
+  
+
+  //grafico 
    $scope.myJson = {
     title: {
       text: "Drag the bottom right corner to resize",
