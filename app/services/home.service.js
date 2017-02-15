@@ -8,7 +8,8 @@ app.service('HomeService', function($http,$q, $log) {
         commits: GITHUB_PATH + "/stats/commit_activity",        
         contributors:GITHUB_PATH + "/contributors",
         forks: GITHUB_PATH, 
-        stars: GITHUB_PATH
+        stars: GITHUB_PATH,
+        branches: GITHUB_PATH + "/branches"
     };
 
     self.getCommits = function () {
@@ -54,6 +55,19 @@ app.service('HomeService', function($http,$q, $log) {
     self.getStars = function () {
         return $http
             .get(endpoints.stars)
+            .success(function(response) {
+                defer.resolve(response.data);
+                return defer.promise;
+
+            }).error(function(e) {
+                defer.reject(e);
+            });
+        return defer.promise;
+    };
+ 
+    self.getBranches = function () {
+        return $http
+            .get(endpoints.branches)
             .success(function(response) {
                 defer.resolve(response.data);
                 return defer.promise;

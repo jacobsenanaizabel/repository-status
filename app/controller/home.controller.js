@@ -13,14 +13,25 @@ app.controller('HomeController', function($scope,$http, HomeService) {
     HomeService.getStars().then(function(response) {
       $scope.stars = response.data;
     });
-    
-    HomeService.getCommits().then(function(response) {
-      $scope.commits = response.data;
-    });
 
     HomeService.getContributors().then(function(response) {
       $scope.contributors = response.data[0];
     });
-  };  
+  }; 
+
+  $scope.allBranchs = function(){
+
+    HomeService.getBranches().then(function(response) {
+      $scope.branchs = _.map(response.data, function(response) { return _.pick(response, 'name'); });
+    
+    });
+
+    $scope.steps = [
+      {stepName: "companyName", isComplete: true},
+      {stepName: "businessType", isComplete: true},
+      {stepName: "physicalAddress", isComplete: true}
+    ];
+
+  };
 
 });
