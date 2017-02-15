@@ -6,8 +6,9 @@
         <title>{{title}}</title>
 
         <!--STYLE -->	
-        <link href="content/css/style.css" rel="stylesheet">
-        <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"> 	
+        <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"> 
+        <link href="content/css/style.scss" rel="stylesheet">	
+        <link href="content/css/style.css" rel="stylesheet">	
         <link href="content/css/narrow-jumbotron.css" rel="stylesheet">
 
         <!--BIBLIOTECAS -->
@@ -24,7 +25,7 @@
         <script src="app/controller/app.controller.js"></script>
         <script src="app/services/home.service.js"></script>
         <script src="app/controller/home.controller.js"></script>
-        <script src="app/directive/componentes.directive.js"></script> 
+        <script src="app/directive/graph.directive.js"></script> 
     </head>
     <body>
         <div ng-include="'app/views/home.html'"  onload="init()"></div>

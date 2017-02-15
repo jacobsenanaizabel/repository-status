@@ -10,16 +10,11 @@
         Repositorio <span class="caret"></span>
       </button>
       <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="btn-append-to-single-button">
-        <li role="menuitem"><a href="#">Master</a></li>
-        <li role="menuitem"><a href="#">Beta</a></li>
+        <li role="menuitem" ng-click="lastCommits()">Master</li>
+        <li role="menuitem" ng-click="lastCommits()">Beta</li>
       </ul>
-    </div>
-    
-    <!-- Grafico -->
-      <div style="margin-top: 20px;">
-        <div zingchart id="chart-1" zc-json="myJson" zc-width="100%"  zc-width=600></div>
-      </div>
-    <!-- Fim do grafico -->
+    </div> 
+    <my-graph></my-graph>
     <div class="row">
         <div class="col-lg-12">
           <h2>Stars</h2>
@@ -36,7 +31,7 @@
         <div class="col-lg-12">
           <h2>Contributors</h2>
           <div id="contributors">
-              <h1 class="text"> 98 </h1>          
+              <h1 class="text">  {{contributors.contributions}} </h1>          
           </div>     
         </div>
   </div>

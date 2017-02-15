@@ -5,14 +5,10 @@ app.service('HomeService', function($http,$q, $log) {
     var GITHUB_PATH = 'http://api.github.com/repos/jacobsenanaizabel/repository-status';
     
     var endpoints = {
-        commits: GITHUB_PATH + "/contributors",        
+        commits: GITHUB_PATH + "/stats/commit_activity",        
         contributors:GITHUB_PATH + "/contributors",
         forks: GITHUB_PATH, 
         stars: GITHUB_PATH
-    };
-
-   self.getMessages = function() {
-   
     };
 
     self.getCommits = function () {
@@ -26,7 +22,7 @@ app.service('HomeService', function($http,$q, $log) {
                 defer.reject(e);
             });
         return defer.promise;
-    }
+    };
 
     self.getContributors = function () {
         return $http
@@ -39,7 +35,7 @@ app.service('HomeService', function($http,$q, $log) {
                 defer.reject(e);
             });
         return defer.promise;
-    }
+    };
 
     self.getForks = function () {   
         return $http
@@ -52,7 +48,7 @@ app.service('HomeService', function($http,$q, $log) {
                 defer.reject(e);
             });
         return defer.promise;
-    }
+    };
 
     
     self.getStars = function () {
@@ -66,5 +62,5 @@ app.service('HomeService', function($http,$q, $log) {
                 defer.reject(e);
             });
         return defer.promise;
-    }
+    };
 });
