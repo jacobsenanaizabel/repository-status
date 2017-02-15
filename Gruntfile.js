@@ -12,9 +12,9 @@ module.exports = function(grunt) {
 		//Jasmine
 	    jasmine: {
 	    	hello: {
-	    		src: 'assets/js/hello.js',
+	    		src: 'test/assets/js/hello.js',
 	    		options: {
-	    			specs: 'spec/*Spec.js'
+	    			specs: 'test/spec/*Spec.js'
 	    		}
 	    	}
 	    },
