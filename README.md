@@ -1,19 +1,43 @@
 # REPOSITORY STATUS
-Sistema de status de qualquer repositorio github.
+Sistema de status de repositorio github.
 
 Author:      Ana Izabel Alfaro Jacobsen
 Date:        2017-02-10 
   
 
-## Services
-### Headers de request
 
-### Pegar todos os forks de um repositorio GIT
+## Configuração de ambiente
+
+* Instalar o [node js](http://nodejs.org/) 
+* Clonar o repositorio [https://github.com/jacobsenanaizabel/repository-status.git](https://github.com/jacobsenanaizabel/repository-status.git)
+* npm install
+* npm install -g grunt
+* npm install -g grunt-cli
+* npm install -g bower
+* grunt server 
+* localhost:9000
+
+#### ... e seja bem-vindo(a)!
+
+### Tecnologias utilizadas 
+* AngularJS 1.5
+* JSHint
+* Jasmine 
+* Grunt
+* Bower
+* NPM
+* SASS
+* HTML5 
+
+## Services
+### Requests utilizados no sistema 
+
+### Pegar dados gerais sobre um repositorio GIT
 Retorna dados de todos os forks de um repositorio 
 
 | Field            | Value                                                                 |
 |----------------- |-----------------------------------------------------------------------|
-| **URL Template** | https://api.github.com/repos/{{user}}/{{repository}}/forks            |
+| **URL Template** | https://api.github.com/repos/{{user}}/{{repository}}                  |
 | **Method**       | GET                                                                   |
 | **Security**     | public                                                                |
 
