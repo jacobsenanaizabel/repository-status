@@ -1,5 +1,5 @@
 app.service('HomeService', function($http,$q, $log) {
-
+    
     var self = this;
     var defer = $q.defer(); 
     var GITHUB_PATH = 'http://api.github.com/repos/jacobsenanaizabel/repository-status';
@@ -64,7 +64,8 @@ app.service('HomeService', function($http,$q, $log) {
             });
         return defer.promise;
     };
- 
+   
+
     self.getBranches = function () {
         return $http
             .get(endpoints.branches)

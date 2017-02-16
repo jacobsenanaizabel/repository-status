@@ -4,12 +4,12 @@ module.exports = function(grunt) {
 	var gruntConfig = {
 
 		pkg: grunt.file.readJSON('package.json'),
-
-		//Jshint
-		jshint: {
-			all: ['app/**/**/*.js']
+		config: {
+			dev: 'app/'
 		},
-		//Jasmine
+		jshint: {
+			all: ['<%= config.prod %>/controller/*.js']
+		},
 	    jasmine: {
 	    	hello: {
 	    		src: 'test/assets/js/hello.js',
@@ -18,6 +18,22 @@ module.exports = function(grunt) {
 	    		}
 	    	}
 	    },
+		watch:{
+			options:{
+				livereload:true
+			},
+			html:{
+				files:'index.html'
+			},
+			jhint: {
+				files:'<%= config.prod %>/controller/*.js',
+				task:'build' 	
+			},
+			js_test:{
+				files: 'test/assets/js/hello.js',
+				task:'test'
+			}
+		},
 		connect:{
 			server:{
 				options:{
@@ -28,17 +44,17 @@ module.exports = function(grunt) {
 				}
 			}
 		}
-	}
-
-
- 
+	} 
 	grunt.initConfig(gruntConfig);
  
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-jasmine');
+	grunt.loadNpmTasks('grunt-contrib-watch');
  
 	grunt.registerTask('build', ['jshint']);
 	grunt.registerTask('test', ['jasmine']);
 	grunt.registerTask('server',['connect:server']);
+	grunt.registerTask('live',   ['build','test','connect', 'watch']);
+
 };

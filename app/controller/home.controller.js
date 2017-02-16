@@ -1,8 +1,8 @@
 app.controller('HomeController', function($scope,$http, HomeService) {
 
-  var self = this;
-  self.title = "Repository Status";
-  self.footer = "Feito com ❤  por Ana Izabel Jacobsen";
+
+  $scope.title = "Repository Status";
+  $scope.footer = "Feito com ❤  por Ana Izabel Jacobsen";
 
   $scope.init = function(){
 
@@ -25,13 +25,6 @@ app.controller('HomeController', function($scope,$http, HomeService) {
       $scope.branchs = _.map(response.data, function(response) { return _.pick(response, 'name'); });
     
     });
-
-    $scope.steps = [
-      {stepName: "companyName", isComplete: true},
-      {stepName: "businessType", isComplete: true},
-      {stepName: "physicalAddress", isComplete: true}
-    ];
-
   };
 
 });
