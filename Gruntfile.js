@@ -20,7 +20,9 @@ module.exports = function(grunt) {
 	    },
 		watch:{
 			options:{
-				livereload:true
+				livereload:true,        
+				key: grunt.file.read('c:/OpenSSL-Win64/bin/key/livereload.key'),
+        		cert: grunt.file.read('c:/OpenSSL-Win64/bin/key/livereload.crt')
 			},
 			html:{
 				files:'index.html'

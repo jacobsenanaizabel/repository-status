@@ -6,7 +6,7 @@ describe('ola', function() {
 		hello = new Hello();
 	});
 
-	it('Diga meu nome corretamente', function() {
+	it('Hello World Yasmine', function() {
 		expect( hello.sayHi('Ola') ).toEqual('Ola testando yasmin!');
 	});
 });
