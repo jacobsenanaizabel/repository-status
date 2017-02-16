@@ -13,79 +13,39 @@ app.directive('myGraph', function() {
         HomeService.getCommits().then(function(response) {
 
             $scope.commits = response.data;
-            $scope.week_map = _.map($scope.commits, function(response) { return _.pick(response, 'week'); });
-      
-            $scope.graphDraw = {       
-            title: {
-            text: "Commits das ultimas semanas",
-            fontSize: 16,
-            fontColor: "#fff"
+            $scope.week_map = _.map($scope.commits, function(response) { return _.pick(response, 'total'); });
+            
+            var config = {
+            "type": "area",
+            "scale-x":{
+                "labels":["Semana 1","Semana 2","Semana 3","Semana 4","Semana 5","Semana 6","Semana 7"]
             },
-            backgroundColor: "#2bbb9a",
-            globals: {
-            shadow: false,
-            fontFamily: "Arial"
+            "scale-y": {
+                "values":"0:200:50",
+                "short":true,
+                "short-unit":"commit",
+                "thousands-separator":","
             },
-            type: "line",
-            scaleX: {
-            maxItems: 1456012800,
-            lineColor: "white",
-            lineWidth: "1px",
-            tick: {
-                lineColor: "white",
-                lineWidth: "1px"
+            "plot":{
+                "aspect":"spline"
             },
-            item: {
-                fontColor: "white"
+            "plotarea":{
+                "margin-left":"dynamic"
             },
-            guide: {
-                visible: false
-            }
-            },
-            scaleY: {
-            lineColor: "white",
-            lineWidth: "1px",
-            tick: {
-                lineColor: "white",
-                lineWidth: "1px"
-            },
-            guide: {
-                lineStyle: "solid",
-                lineColor: "#249178"
-            },
-            item: {
-                fontColor: "white"
-            },
-            },
-            tooltip: {
-            visible: false
-            },
-            crosshairX: {
-            lineColor: "#fff",
-            scaleLabel: {
-                backgroundColor: "#fff",
-                fontColor: "#323232"
-            },
-            plotLabel: {
-                backgroundColor: "#fff",
-                fontColor: "#323232",
-                text: "%v",
-                borderColor: "transparent"
-            }
-            },
-            plot: {
-            lineWidth: "2px",
-            lineColor: "#FFF",
-            aspect: "spline",
-            marker: {
-                visible: false
-            }
-            },
-            series: [{
-                values: [$scope.week_map[0].week, $scope.week_map[1].week, $scope.week_map[2].week, $scope.week_map[3].week, $scope.week_map[4].week, $scope.week_map[5].week, $scope.week_map[6].week]
-            }]
-        };
-
+            "series": [
+                {
+                "values":[$scope.week_map[45    ].total,$scope.week_map[46].total,$scope.week_map[47].total,$scope.week_map[48].total,$scope.week_map[49].total,$scope.week_map[50].total,$scope.week_map[51].total]
+                }
+            ]
+            };
+            
+            zingchart.render({ 
+                id : 'drawGraph', 
+                data : config, 
+                height: 400, 
+                width: "100%"
+            });
+          
         });
 
       }
