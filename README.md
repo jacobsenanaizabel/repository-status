@@ -14,8 +14,9 @@ Date:        2017-02-10
 * npm install -g grunt
 * npm install -g grunt-cli
 * npm install -g bower
+* bower install 
 * grunt server 
-* localhost:9000
+* localhost:9000 (a requisição para o grafico demora um pouco mesmo)
 
 #### ... e seja bem-vindo(a)!
 
