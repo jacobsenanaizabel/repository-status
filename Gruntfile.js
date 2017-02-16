@@ -5,7 +5,10 @@ module.exports = function(grunt) {
 
 		pkg: grunt.file.readJSON('package.json'),
 		config: {
-			dev: 'app/'
+			dev: 'app/',
+			key: 'insira aqui o path da sua key',
+			cert: 'insira aqui o path da sua certificadora'
+
 		},
 		jshint: {
 			all: ['<%= config.prod %>/controller/*.js']
@@ -18,15 +21,30 @@ module.exports = function(grunt) {
 	    		}
 	    	}
 	    },
+		sass: {
+			options: {
+				sourceMap: true
+			},
+			dist: {
+				files: {
+					'content/css/style.css': 'content/css/main.scss'
+				}
+			}
+		},
 		watch:{
 			options:{
-				livereload:true,        
-				key: grunt.file.read('c:/OpenSSL-Win64/bin/key/livereload.key'),
-        		cert: grunt.file.read('c:/OpenSSL-Win64/bin/key/livereload.crt')
+				livereload:true        
+			//	key: grunt.file.read('<%= config.key %>'),
+        	//	cert: grunt.file.read('<%= config.cert %>')
 			},
 			html:{
 				files:'index.html'
 			},
+			sass: {
+	    		files: 'content/css/*.scss',
+	    		tasks: 'css'
+	    	},
+
 			jhint: {
 				files:'<%= config.prod %>/controller/*.js',
 				task:'build' 	
@@ -49,11 +67,13 @@ module.exports = function(grunt) {
 	} 
 	grunt.initConfig(gruntConfig);
  
+ 	grunt.loadNpmTasks('grunt-sass');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-jasmine');
 	grunt.loadNpmTasks('grunt-contrib-watch');
  
+	grunt.registerTask('css', ['sass']);
 	grunt.registerTask('build', ['jshint']);
 	grunt.registerTask('test', ['jasmine']);
 	grunt.registerTask('server',['connect:server']);
