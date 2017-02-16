@@ -34,7 +34,7 @@ app.directive('myGraph', function() {
             },
             "series": [
                 {
-                "values":[$scope.week_map[45    ].total,$scope.week_map[46].total,$scope.week_map[47].total,$scope.week_map[48].total,$scope.week_map[49].total,$scope.week_map[50].total,$scope.week_map[51].total]
+                "values":[$scope.week_map[45].total,$scope.week_map[46].total,$scope.week_map[47].total,$scope.week_map[48].total,$scope.week_map[49].total,$scope.week_map[50].total,$scope.week_map[51].total]
                 }
             ]
             };
