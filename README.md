@@ -18,6 +18,8 @@ Date:        2017-02-10
 * grunt server 
 * localhost:9000 (a requisição para o grafico demora um pouco mesmo)
 
+> Use Https substituindo os paths das variaveis 'key' e 'cert' no Gruntfile :bowtie:
+
 #### ... e seja bem-vindo(a)!
 
 ### Tecnologias utilizadas 
